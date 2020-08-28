@@ -1,0 +1,9 @@
+*.pyc
+report/
+.idea/
+web_test/conf/config.py
+migrations/
+*.log
+.pytest_cache/
+*.UWS
+*.pid
