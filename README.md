@@ -2,7 +2,7 @@
 之前搭建过一套stf的真机云测平台，最近在搞app自动化，想将stf与appium结合起来，搭建app真机自动化平台
 
 # 二、架构图
-![架构图](stf appium结构图.png)
+![架构图](img/stf appium结构图.png)
 >备注：android-provider功能已实现，ios-provider功能待实现
 
 # 三、前期准备
@@ -11,9 +11,9 @@
 >stf部署参考文档：[Android部署](https://testerhome.com/topics/17233)  、[IOS部署](https://testerhome.com/topics/19548)  
 >stf openapi参考文档：[stf-openapi](https://blog.csdn.net/u011608531/article/details/105283652)  
 
-![stf_devices](stf devices.jpg)  
+![stf_devices](img/stf devices.jpg)  
 
-![stf token](stf token.jpg)
+![stf token](img/stf token.jpg)
 ##### 3、在stf-provider节点启动appium进程，一个appium进程绑定一台手机
 ```shell script
 #/bin/bash
@@ -54,8 +54,8 @@ desired_caps = {
 driver = webdriver.Remote(appium_hub, desired_caps)
 ```  
 ##### 4、另开线程执行adb install命令，主进程通过appium点击继续安装按钮    
-![confirm install](confirm install.jpg)  
-![confirm permission](confirm permission.jpg)  
+![confirm install](img/confirm install.jpg)  
+![confirm permission](img/confirm permission.jpg)  
 ```python
 def _confirm_install_app(self, ssh_client: SSHClient, driver, serial_no):
     '''
@@ -92,7 +92,7 @@ driver.start_activity(package_name, activity_name, appWaitDuration=10000, **opts
 time.sleep(1)
 driver.switch_to.alert.accept()
 ```  
-![stf locked.jpg](stf locked.jpg)
+![stf locked.jpg](img/stf locked.jpg)
 >备注：此状态为设备占用状态，可以点击进去查看实时执行效果
 
 #### 以上流程实现apk安装到启动的流程  
